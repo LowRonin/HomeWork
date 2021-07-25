@@ -6,15 +6,16 @@ public class HomeWorkApp {
         int a = 10;
         int b = -2;
         String x = "Написать " + a + " раз";
-        System.out.println(returnBool(a, b));
-        returnPosOrNeg(a);
-        System.out.println(returnBoolPosOrNeg(b));
-        returnStringNumOfTimes(x, a);
-        System.out.println(leapYear(year));
+        System.out.println(returnBool(a, b));//1
+        returnPosOrNeg(a);//2
+        System.out.println(returnBoolPosOrNeg(b));//3
+        returnStringNumOfTimes(x, a);//4
+        System.out.println(leapYear(year));//5
     }
 
     /**Задание 1
-     *
+     *Написать метод, принимающий на вход два целых числа и проверяющий,
+     * что их сумма лежит в пределах от 10 до 20 (включительно), если да – вернуть true, в противном случае – false.
      * @param a
      * @param b
      * @return
@@ -28,7 +29,8 @@ public class HomeWorkApp {
     }
 
     /**Задание 2
-     *
+     *Написать метод, принимающий на вход два целых числа и проверяющий,
+     *  что их сумма лежит в пределах от 10 до 20 (включительно), если да – вернуть true, в противном случае – false.
      * @param a
      */
     public static void returnPosOrNeg(int a) {
@@ -42,7 +44,8 @@ public class HomeWorkApp {
     }
 
     /**Задание 3
-     *
+     *Написать метод, которому в качестве параметра передается целое число.
+     *  Метод должен вернуть true, если число отрицательное, и вернуть false если положительное.
      * @param b
      * @return
      */
@@ -55,7 +58,8 @@ public class HomeWorkApp {
     }
 
     /**Задание 4
-     *
+     *Написать метод, которому в качестве аргументов передается строка и число,
+     *  метод должен отпечатать в консоль указанную строку, указанное количество раз;
      * @param x
      * @param a
      */
@@ -66,7 +70,9 @@ public class HomeWorkApp {
     }
 
     /**Задание 5
-     *
+     * Написать метод, который определяет, является ли год високосным, и возвращает boolean
+     *  (високосный - true, не високосный - false). Каждый 4-й год является високосным,
+     *  кроме каждого 100-го, при этом каждый 400-й – високосный.
      * @param year
      * @return
      */
