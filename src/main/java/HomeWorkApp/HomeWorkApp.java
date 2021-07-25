@@ -13,7 +13,12 @@ public class HomeWorkApp {
         System.out.println(leapYear(year));
     }
 
-//Задание 1
+    /**Задание 1
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static boolean returnBool(int a, int b) {
         if (a + b > 10 && a + b < 20) {
             return true;
@@ -21,7 +26,11 @@ public class HomeWorkApp {
             return false;
         }
     }
-//Задание 2
+
+    /**Задание 2
+     *
+     * @param a
+     */
     public static void returnPosOrNeg(int a) {
         if (a >= 0) {
             System.out.println("Число положительное");
@@ -31,7 +40,12 @@ public class HomeWorkApp {
         }
 
     }
-//Задание 3
+
+    /**Задание 3
+     *
+     * @param b
+     * @return
+     */
     public static boolean returnBoolPosOrNeg(int b) {
         if (b >= 0) {
             return false;
@@ -39,13 +53,23 @@ public class HomeWorkApp {
             return true;
         }
     }
-//Задание 4
+
+    /**Задание 4
+     *
+     * @param x
+     * @param a
+     */
     public static void returnStringNumOfTimes(String x, int a) {
         for (int i = 0; i < a; i++) {
             System.out.println(x);
         }
     }
-//Задание 5
+
+    /**Задание 5
+     *
+     * @param year
+     * @return
+     */
     public static boolean leapYear(int year) {
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             return true;
