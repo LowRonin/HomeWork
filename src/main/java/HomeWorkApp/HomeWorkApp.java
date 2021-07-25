@@ -1,50 +1,55 @@
 package HomeWorkApp;
 
 public class HomeWorkApp {
-
     public static void main(String[] args) {
-        printThreeWords();
-        checkSumSign();
-        printColor();
-        compareNumbers();
+        int year = 2100;
+        int a = 10;
+        int b = -2;
+        String x = "Написать " + a + " раз";
+        System.out.println(returnBool(a, b));
+        returnPosOrNeg(a);
+        System.out.println(returnBoolPosOrNeg(b));
+        returnStringNumOfTimes(x, a);
+        System.out.println(leapYear(year));
     }
-    //Задание 1
-    public static void printThreeWords(){
-        System.out.println("Orange\nBanana\nApple");
-    }
-    //Задание 2
-    public static void checkSumSign(){
-        int a,b,x;
-        a = 22;
-        b = -36;
-        x = a + b;
-        if (x >= 0){
-            System.out.println("Сумма положительная");
+
+
+    public static boolean returnBool(int a, int b) {
+        if (a + b > 10 && a + b < 20) {
+            return true;
         } else {
-            System.out.println("Сумма отрицательная");
-        }
-    }
-    //Задание 3
-    public static void printColor(){
-        int value = 68;
-        if (value <= 0){
-            System.out.println("Красный");
-        } else if (value > 0 && value <= 100){
-            System.out.println("Желтый");
-        } else {
-            System.out.println("Зеленый");
-        }
-    }
-    //Задание 4
-    public static void compareNumbers() {
-        int a, b;
-        a = 10;
-        b = 1;
-        if (a >= b) {
-            System.out.println("a >= b");
-        } else {
-            System.out.println("a < b");
+            return false;
         }
     }
 
+    public static void returnPosOrNeg(int a) {
+        if (a >= 0) {
+            System.out.println("Число положительное");
+
+        } else {
+            System.out.println("Число отрицательное");
+        }
+
+    }
+
+    public static boolean returnBoolPosOrNeg(int b) {
+        if (b >= 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public static void returnStringNumOfTimes(String x, int a) {
+        for (int i = 0; i < a; i++) {
+            System.out.println(x);
+        }
+    }
+
+    public static boolean leapYear(int year) {
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            return true;
+        } else return false;
+
+    }
 }
