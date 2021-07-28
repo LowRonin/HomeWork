@@ -66,10 +66,13 @@ public class HomeWork3 {
             System.out.printf(Arrays.toString(arr4[y1]));
             System.out.println();
         }
-        System.out.println(Arrays.toString(readjustment(10, 10)));// Задание 5
+        System.out.println("\n" + Arrays.toString(createArrayAndFill(10, 10)));// Задание 5
+
         System.out.println(findMaxMin());// Задание 6
+
         int[] arr7 = {2, 2, 2, 1, 2, 2, 12, 8, 4, 10, 1};//Задание 7
         System.out.println(Arrays.toString(sumLeftRight(arr7)));
+
         int[] arr8 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};//Задание 8
         int shift = -3;
         System.out.println(Arrays.toString(shift(arr8, shift)));
@@ -78,11 +81,9 @@ public class HomeWork3 {
      * Написать метод, принимающий на вход два аргумента: len и initialValue,
      * и возвращающий одномерный массив типа int длиной len, каждая ячейка которого равна initialValue;
      */
-    public static int[] readjustment(int len, int initialValue) {
-        int[] arr5 = new int[len];
-        for (int i = 0; i < len; i++){
-            arr5[i] = initialValue;
-        }
+    public static int[] createArrayAndFill(int len, int initialValue) {
+       int[] arr5 = new int[len];
+       Arrays.fill(arr5, initialValue);
         return arr5;
     }
     /** Задание 6
@@ -90,16 +91,16 @@ public class HomeWork3 {
      */
      public static String findMaxMin (){
          int[] arr6 = {1, 23, 2, 94, 2, 0, -20, 65, -34};
-         int min = arr6[0];
-         int max = arr6[0];
-         for (int i = 0; i < arr6.length; i++){
-             if (arr6[i] > max){
-                 max = arr6[i];
-             } else if (arr6[i] < min){
-                 min = arr6[i];
-             }
-         }
-         return ("Максимальное число = " + max + "\n" + "Минимальное число = " + min);
+         Arrays.sort(arr6);
+         return ("Максимальное число = " + arr6[0] + "\n" + "Минимальное число = " + arr6[arr6.length - 1]);
+   /*     Первый вариант)))
+    int min = arr6[0];
+                 int max = arr6[0];
+                 for (int i = 0; i < arr6.length; i++){
+                     if (arr6[i] > max){
+                         max = arr6[i];
+                     } else if (arr6[i] < min){
+                         min = arr6[i];*/
     }
     /** Задание 7
      * ** Написать метод, в который передается не пустой одномерный целочисленный массив, метод должен вернуть true,
