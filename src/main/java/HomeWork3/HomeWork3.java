@@ -27,11 +27,11 @@ public class HomeWork3 {
          * Задать пустой целочисленный массив длиной 100.
          * С помощью цикла заполнить его значениями 1 2 3 4 5 6 7 8 … 100;
          */
-        int[] arr2 = new int[101];
+        int[] arr2 = new int[100];
         int a = 0;
-        while (a <= 100) {
+        while (a <= 99) {
             arr2[a] = a + 1; //Почему, если я тут поменяю на a++ в массиве получается билеберда,
-            //а если я пишу a+1 то все нормально?
+                             //а если я пишу a+1 то все нормально?
             a++;
         }
         System.out.printf(Arrays.toString(arr2));
@@ -110,7 +110,7 @@ public class HomeWork3 {
      * @return
      */
     public static int[] sumLeftRight(int[] arr7) {
-        long m = System.currentTimeMillis();
+
         int x = 0;//Сумма справа
         int y = 0;//Сумма слева
         int i = 0;
