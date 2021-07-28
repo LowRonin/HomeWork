@@ -110,6 +110,7 @@ public class HomeWork3 {
      * @return
      */
     public static int[] sumLeftRight(int[] arr7) {
+        long m = System.currentTimeMillis();
         int x = 0;//Сумма справа
         int y = 0;//Сумма слева
         int i = 0;
@@ -127,6 +128,7 @@ public class HomeWork3 {
             return arr7;
         }
         return null;
+
     }
     /**
      * Задание 8
