@@ -75,7 +75,7 @@ public class HomeWork3 {
 
         int[] arr8 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};//Задание 8
         int shift = -3;
-        System.out.println(Arrays.toString(shift(arr8, shift)));
+        System.out.println(Arrays.toString(shiftLeftOrRight(arr8, shift)));
     }
     /** Задание 5
      * Написать метод, принимающий на вход два аргумента: len и initialValue,
@@ -144,7 +144,7 @@ public class HomeWork3 {
      * @param shift
      * @return
      */
-    public static int[] shift(int[] arr8, int shift) {
+    public static int[] shiftLeftOrRight(int[] arr8, int shift) {
         int x = 0;
         int y = 0;
         if (shift >= 0) {
