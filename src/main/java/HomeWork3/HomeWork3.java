@@ -74,7 +74,7 @@ public class HomeWork3 {
         System.out.println(Arrays.toString(sumLeftRight(arr7)));
 
         int[] arr8 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};//Задание 8
-        int shift = -2;
+        int shift = 7;
         System.out.println(Arrays.toString(shiftLeftOrRight(arr8, shift)));
     }
     /** Задание 5
@@ -145,33 +145,31 @@ public class HomeWork3 {
      * @return
      */
     public static int[] shiftLeftOrRight(int[] arr8, int shift) {
-        int y = 0;
-        if (shift >= 0) {
-            for (int i = 0; i < shift; i++) {
-                y = arr8[0];
-                for (int j = 0; j < arr8.length; j++) {
-                    if (j == arr8.length - 1){
-                        arr8[arr8.length - 1] = y;
-                    }
-                    if (j < arr8.length - 1) {
-                        arr8[j] = arr8[j + 1];
-                    }
+        if (shift != arr8.length && shift != -arr8.length && shift != 0) {
+            if (shift >= 0) {
+                for (int i = 0; i < shift; i++) {
+                    int y = arr8[0];
+                    for (int j = 0; j < arr8.length; j++) {
+                        if (j < arr8.length - 1) {
+                            arr8[j] = arr8[j + 1];
+                        } else {
+                            arr8[arr8.length - 1] = y;
+                        }
                     }
                 }
-            }else {
-            for (int i = 0; i > shift; i--) {
-                y = arr8[arr8.length - 1];
-                for (int j = arr8.length - 1; j >= 0; j--) {
-                    if (j == 0) {
-                        arr8[0] = y;
-                    }
-                    if (j > 0) {
-                        arr8[j] = arr8[j - 1];
+            } else {
+                for (int i = 0; i > shift; i--) {
+                    int y = arr8[arr8.length - 1];
+                    for (int j = arr8.length - 1; j >= 0; j--) {
+                        if (j > 0) {
+                            arr8[j] = arr8[j - 1];
+                        } else {
+                            arr8[0] = y;
+                        }
                     }
                 }
             }
         }
-
         return arr8;
     }
 }
