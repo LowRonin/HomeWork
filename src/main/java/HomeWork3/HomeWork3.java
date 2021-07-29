@@ -73,8 +73,8 @@ public class HomeWork3 {
         int[] arr7 = {2, 2, 2, 1, 2, 2, 12, 8, 4, 10, 1};//Задание 7
         System.out.println(Arrays.toString(sumLeftRight(arr7)));
 
-        int[] arr8 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};//Задание 8
-        int shift = -3;
+        int[] arr8 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};//Задание 8
+        int shift = -2;
         System.out.println(Arrays.toString(shiftLeftOrRight(arr8, shift)));
     }
     /** Задание 5
@@ -145,38 +145,28 @@ public class HomeWork3 {
      * @return
      */
     public static int[] shiftLeftOrRight(int[] arr8, int shift) {
-        int x = 0;
         int y = 0;
         if (shift >= 0) {
             for (int i = 0; i < shift; i++) {
-                for (int j = 0; j < arr8.length - 1; j++) {
-                    if (j == 0) {
-                        x = arr8[j];
-                        arr8[0] = arr8[arr8.length - 1];
+                y = arr8[0];
+                for (int j = 0; j < arr8.length; j++) {
+                    if (j == arr8.length - 1){
+                        arr8[arr8.length - 1] = y;
                     }
-                    if (j % 2 == 0) {
-                        y = arr8[j + 1];
-                        arr8[j + 1] = x;
-                    } else if (j % 2 != 0) {
-                        x = arr8[j + 1];
-                        arr8[j + 1] = y;
+                    if (j < arr8.length - 1) {
+                        arr8[j] = arr8[j + 1];
+                    }
                     }
                 }
-            }
-        } else {
+            }else {
             for (int i = 0; i > shift; i--) {
-                for (int j = arr8.length - 1, i2 = 0; i2 < arr8.length - 1; i2++, j--) {
-                    if (i2 == 0) {
-                        x = arr8[j];
-                        arr8[arr8.length - 1] = arr8[0];
+                y = arr8[arr8.length - 1];
+                for (int j = arr8.length - 1; j >= 0; j--) {
+                    if (j == 0) {
+                        arr8[0] = y;
                     }
-                    if (i2 % 2 == 0) {
-                        y = arr8[j - 1];
-                        arr8[j - 1] = x;
-                    } else if (j % 2 != 0) {
-                        x = arr8[j - 1];
-                        arr8[j - 1] = y;
-
+                    if (j > 0) {
+                        arr8[j] = arr8[j - 1];
                     }
                 }
             }
