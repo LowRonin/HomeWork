@@ -13,10 +13,12 @@ public class HomeWork3 {
         for (int i = 0; i < arr1.length; i++) {
             switch (arr1[i]) {
                 case 0: {
+                    arr1[i] = 1;
                     System.out.printf(1 + " ");
                     break;
                 }
                 case 1: {
+                    arr1[i] = 0;
                     System.out.printf(0 + " ");
                     break;
                 }
