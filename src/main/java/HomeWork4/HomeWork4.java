@@ -129,6 +129,7 @@ public class HomeWork4 {
                 }
             }
         }
+
         int diag = 0;
         x = -1;
         y = -1;
@@ -174,14 +175,6 @@ public class HomeWork4 {
     }
 
     public static boolean checkWin(char symb) {
-        /*if(map[0][0] == symb && map[0][1] == symb && map[0][2] == symb) return true;
-        if(map[1][0] == symb && map[1][1] == symb && map[1][2] == symb) return true;
-        if(map[2][0] == symb && map[2][1] == symb && map[2][2] == symb) return true;
-        if(map[0][0] == symb && map[1][0] == symb && map[2][0] == symb) return true;
-        if(map[0][1] == symb && map[1][1] == symb && map[2][1] == symb) return true;
-        if(map[0][2] == symb && map[1][2] == symb && map[2][2] == symb) return true;
-        if(map[0][0] == symb && map[1][1] == symb && map[2][2] == symb) return true;
-        if(map[2][0] == symb && map[1][1] == symb && map[0][2] == symb) return true;*/
         for (int checkX = 0; checkX < SIZE; checkX++){
             int lineX = 0;
             int lineY = 0;
@@ -211,5 +204,4 @@ public class HomeWork4 {
         }
         return true;
     }
-
 }
