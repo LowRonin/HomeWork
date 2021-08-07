@@ -33,6 +33,14 @@ public class HomeWork4 {
                 System.out.println("Победил Искуственный Интеллект 0");
                 break;
             }
+
+            aiTurn(DOT_Q);
+            printMap();
+            if (checkWin(DOT_Q)) {
+                System.out.println("Победил Искуственный Интеллект Q");
+                break;
+            }
+
             if (isMapFull()) {
                 System.out.println("Ничья");
                 break;
@@ -47,13 +55,6 @@ public class HomeWork4 {
         for (int i = 0; i < SIZE; i++) {
             Arrays.fill(map[i], DOT_EMPTY);
             }
-        /**
-         * НЕ ЗАБУДЬ УЮРАТЬ ЭТУ ХРЕНЬ
-         */
-        map[0][1] = 'X';
-        map[0][2] = 'X';
-        map[0][3] = 'X';
-        map[0][4] = 'X';
         }
 
     public static void printMap() {
@@ -88,59 +89,83 @@ public class HomeWork4 {
     }
 
     public static void aiTurn(char DOT) {
-        int x = 0;
-        int y = 0;
-        int lineX = 0;
-        int lineY = 0;
-        int diag = 0;
-        for (int checkX = 0; checkX < SIZE; checkX++) {
-            for (int checkY = 0; checkY < SIZE; checkY++) {
-                if (map[checkX][checkY] == DOT_EMPTY) {
+        int x = -1;
+        int y = -1;
+        for (int checkY = 0; checkY < SIZE; checkY++) {
+            x = -1;
+            y = -1;
+            int lineX = 0;
+            for (int checkX = 0; checkX < SIZE; checkX++) {
+                if (map[checkY][checkX] == DOT_EMPTY) {
                     x = checkX;
                     y = checkY;
                 }
-                if (map[checkX][checkY] != DOT && map[checkX][checkY] != DOT_EMPTY) {
+                if (map[checkY][checkX] != DOT_EMPTY) {
                     lineX++;
                 }
-                if (lineX > SIZE - 1) {
+                if (lineX >= SIZE - 1 && x != -1) {
                     System.out.println("Компьютер походил в точку " + (x + 1) + " " + (y + 1));
                     map[y][x] = DOT;
-                    break;
+                    return;
                 }
             }
         }
+
         for (int checkX = 0; checkX < SIZE; checkX++) {
+            int lineY = 0;
+            x = -1;
+            y = -1;
             for (int checkY = 0; checkY < SIZE; checkY++) {
                 if (map[checkY][checkX] == DOT_EMPTY) {
                     x = checkX;
                     y = checkY;
                 }
-                if (map[checkY][checkX] != DOT && map[checkX][checkY] != DOT_EMPTY) {
+                if (map[checkY][checkX] != DOT_EMPTY) {
                     lineY++;
                 }
-                if (lineY > SIZE - 1) {
+                if (lineY >= SIZE - 1 && x != -1) {
                     System.out.println("Компьютер походил в точку " + (x + 1) + " " + (y + 1));
                     map[y][x] = DOT;
-                    break;
+                    return;
                 }
             }
         }
-        for (int checkX = 0; checkX < SIZE; checkX++) {
-            for (int checkY = 0; checkY < SIZE; checkY++) {
-                if (map[checkY][checkY] == DOT_EMPTY) {
-                    x = checkX;
-                    y = checkY;
-                }
-                if (map[checkY][checkY] != DOT && map[checkX][checkY] != DOT_EMPTY) {
-                    diag++;
-                }
-                if (diag > SIZE - 1) {
-                    System.out.println("Компьютер походил в точку " + (x + 1) + " " + (y + 1));
-                    map[y][x] = DOT;
-                    break;
-                }
+        int diag = 0;
+        x = -1;
+        y = -1;
+        for (int checkY = 0; checkY < SIZE; checkY++) {
+            if (map[checkY][checkY] == DOT_EMPTY) {
+                x = checkY;
+                y = checkY;
+            }
+            if (map[checkY][checkY] != DOT_EMPTY) {
+                diag++;
+            }
+            if (diag >= SIZE - 1 && x != -1) {
+                System.out.println("Компьютер походил в точку " + (x + 1) + " " + (y + 1));
+                map[y][x] = DOT;
+                return;
             }
         }
+
+        diag = 0;
+        for (int checkX = 0, checkY = SIZE - 1; checkX < SIZE; checkY--, checkX++) {
+            x = -1;
+            y = -1;
+            if (map[checkX][checkY] == DOT_EMPTY) {
+                x = checkX;
+                y = checkY;
+            }
+            if (map[checkX][checkY] != DOT_EMPTY) {
+                diag++;
+            }
+            if (diag >= SIZE - 1 && x != -1) {
+                System.out.println("Компьютер походил в точку " + (x + 1) + " " + (y + 1));
+                map[y][x] = DOT;
+                return;
+            }
+        }
+
         do {
             x = rand.nextInt(SIZE);
             y = rand.nextInt(SIZE);
