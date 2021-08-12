@@ -24,12 +24,7 @@ private static int catCounter;
     }
 
     @Override
-    public void runningDistance(int run, int runDist) {
-        super.runningDistance(run, runDist);
-    }
-
-    @Override
     public void swimmingDistance(int swim, int swimDist) {
-        super.swimmingDistance(swim, swimDist);
+        System.out.println("Cats can't swim\n");
     }
 }

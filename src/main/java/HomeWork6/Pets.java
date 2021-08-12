@@ -22,6 +22,6 @@ public abstract class Pets {
     public void swimmingDistance(int swim, int swimDist){
         if (swim < swimDist) {
             System.out.println(species + " swam - " + swim + "m\n");
-        }else System.out.println(species + " died at " + swimDist + " meters, there were " + (swim - swimDist) + " meters left.\n" + "Because cats can't swim\n");
+        }else System.out.println(species + " died at " + swimDist + " meters, there were " + (swim - swimDist) + " meters left.\n");
     }
 }
