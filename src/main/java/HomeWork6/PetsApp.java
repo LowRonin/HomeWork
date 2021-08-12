@@ -2,8 +2,7 @@ package HomeWork6;
 import HomeWork6.Dog;
 public class PetsApp {
     private static int run;
-    public static int dogCount;
-    public static int catCount;
+    private static int swim;
     public static void main(String[] args) {
         Dog[] dog = new Dog[3];
         dog[0] = new Dog(
@@ -26,30 +25,18 @@ public class PetsApp {
         );
         Cat cat = new Cat(4, 2, "DvorCat", 4 );
 
+        swim = (int) (Math.random() * 10);
         run = (int) (Math.random() * 1000);
         for(int i =0; i < dog.length; i++) {
-            dog[i].runningDistance(run);
+            dog[i].runningDistance(run, Dog.getRunDist());
+            dog[i].swimmingDistance(swim, Dog.getSwimDist());
         }
 
-        cat.runningDistance(run);
-        System.out.println("Количество собак = " + dogCount);
-        System.out.println("Количество кошек = " + catCount);
-        System.out.println("Все животные = " + (dogCount + catCount));
-    }
+        cat.runningDistance(run, Cat.getRunDist());
+        cat.swimmingDistance(swim, Cat.getSwimDist());
 
-    public static int getDogCount() {
-        return dogCount;
-    }
-
-    public static void setDogCount(int dogCount) {
-        PetsApp.dogCount = dogCount;
-    }
-
-    public static int getCatCount() {
-        return catCount;
-    }
-
-    public static void setCatCount(int catCount) {
-        PetsApp.catCount = catCount;
+        System.out.println("\nКоличество собак = " + Dog.getDogCount());
+        System.out.println("Количество кошек = " + Cat.getCatCounter());
+        System.out.println("Все животные = " + (Cat.getCatCounter() + Dog.getDogCount()));
     }
 }
