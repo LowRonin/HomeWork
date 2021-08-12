@@ -8,6 +8,7 @@ public class Dog extends Pets{
         super(paws, ears, species, weight);
         swimDist = 10;
         runDist = 500;
+        PetsApp.setDogCount(PetsApp.getDogCount() + 1);
     }
 
     @Override

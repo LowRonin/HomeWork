@@ -9,6 +9,7 @@ private double runDist;
         super(paws, ears, species, weight);
         swimDist = 0;
         runDist = 200;
+        PetsApp.setCatCount(PetsApp.getCatCount() + 1);
     }
 
     @Override
